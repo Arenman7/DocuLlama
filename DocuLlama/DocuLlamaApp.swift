@@ -1,17 +1,14 @@
-//
-//  DocuLlamaApp.swift
-//  DocuLlama
-//
-//  Created by Aren Baghramian on 12/9/24.
-//
-
 import SwiftUI
 
 @main
 struct DocuLlamaApp: App {
+    @StateObject private var appModel = DataInterface()
+    
     var body: some Scene {
-        WindowGroup {
+        MenuBarExtra("DocuLlama", systemImage: "brain") {
             ContentView()
+                .environmentObject(appModel)
         }
+        .menuBarExtraStyle(.window)
     }
 }
